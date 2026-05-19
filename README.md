@@ -1,6 +1,6 @@
 # Guessing Game 
 
-A simple number guessing game built in C++.
+A simple number guessing game built in C++ using Mersenne Twister
 
 ## What it does
 Picks a random number between 1 and 100.
