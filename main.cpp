@@ -1,21 +1,19 @@
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
-using namespace std;
-
+#include <random>
 int main() {
-    srand(time(0));
-    int secret = rand() % 100 + 1;
+    std::mt19937 rng(std::random_device{}());
+    std::uniform_int_distribution<int> dist(1, 100);
+    int secret = dist(rng);
     int guess, attempts = 0;
 
-    cout << "Guess the number (1-100): " << endl;
+    std::cout << "Guess the number (1-100): " <<std::endl;
 
     do {
-        cin >> guess;
+        std::cin >> guess;
         attempts++;
-        if (guess < secret) cout << "Too low! Try again: ";
-        else if (guess > secret) cout << "Too high! Try again: ";
-        else cout << "Correct! You got it in " << attempts << " attempts." << endl;
+        if (guess < secret) std::cout << "Too low! Try again: ";
+        else if (guess > secret) std::cout << "Too high! Try again: ";
+        else std::cout << "Correct! You got it in " << attempts << " attempts." <<std::endl;
     } while (guess != secret);
 
     return 0;
