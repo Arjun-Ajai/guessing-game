@@ -6,13 +6,13 @@ int main() {
     int secret = dist(rng);
     int guess, attempts = 0;
 
-    std::cout << "Guess the number (1-100): " <<std::endl;
+    std::cout << "Guess the number (1-100) : ";
 
     do {
         std::cin >> guess;
         attempts++;
-        if (guess < secret) std::cout << "Too low! Try again: ";
-        else if (guess > secret) std::cout << "Too high! Try again: ";
+        if (guess < secret) std::cout << "It's low! Try again: ";
+        else if (guess > secret) std::cout << "It's high! Try again: ";
         else std::cout << "Correct! You got it in " << attempts << " attempts." <<std::endl;
     } while (guess != secret);
 
