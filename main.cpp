@@ -10,6 +10,12 @@ int main() {
 
     do {
         std::cin >> guess;
+        if (std::cin.fail()) {
+            std::cout << "Invalid input! Please enter a number: ";
+            std::cin.clear();
+            std::cin.ignore(1000, '\n');
+            continue;
+        }
         attempts++;
         if (guess < secret) std::cout << "Its low! Try again: ";
         else if (guess > secret) std::cout << "Its high! Try again: ";
